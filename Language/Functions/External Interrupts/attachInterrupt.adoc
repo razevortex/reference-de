@@ -114,6 +114,11 @@ const byte interruptPin = 2;
 // Definiere eine globale volatile Variable für den Status der LED
 volatile byte state = LOW;
 
+void blink() {
+  // Invertiere den Status: "Lass die LED blinken von HIGH auf LOW/ an auf aus"
+  state = !state;
+}
+
 void setup() {
   // Lege den Pin für die LED als Outputpin fest
   pinMode(ledPin, OUTPUT);
@@ -130,10 +135,7 @@ void loop() {
   digitalWrite(ledPin, state);
 }
 
-void blink() {
-  // Invertiere den Status: "Lass die LED blinken von HIGH auf LOW/ an auf aus"
-  state = !state;
-}
+
 ----
 
 [float]
